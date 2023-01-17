@@ -1,8 +1,8 @@
 
 <html lang="en">
   <head>
-    <title>Phyllo Sample App</title>
-    <link rel="icon" href="/static/favicon_64x64.svg" />
+    <title>LADD3R</title>
+    <link rel="icon" href="/static/Ladder_Wordmark_2.jpg" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="/static/style.css" />
@@ -37,7 +37,7 @@
             isExistingUser
           );
           const token = await createSDKToken(userId);
-          const appName = "Sample App";
+          const appName = "LADD3R";
 
           const config = {
             environment: env,
@@ -93,23 +93,23 @@
     </script>
     <div class="screen_box">
       <div class="top_navbar">
-        <h2>Phyllo Sample App</h2>
+        <h2>LADD3R Connect Center</h2>
       </div>
       <div class="content_text_box">
         <div class="content_data">
           <div class="btn_group">
             <button onclick="phylloSDKConnect()">
-              Connect Platform Account(s)
+              Connect Social Account(s)
             </button>
             <button
               onclick="phylloSDKConnect('9bb8913b-ddd9-430b-a66a-d74d846e6c66')"
             >
-              Connect Instagram using Phyllo
+              Connect Instagram Account Only
             </button>
             <button
               onclick="phylloSDKConnect('14d9ddf5-51c6-415e-bde6-f8ed36ad7054')"
             >
-              Connect YouTube using Phyllo
+              Connect YouTube Only
             </button>
             <div class="check_box">
               <input type="checkbox" id="isExistingUser" />

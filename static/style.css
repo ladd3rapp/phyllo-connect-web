@@ -3,7 +3,8 @@
             padding: 0;
         }
         body{
-            font-family: 'Inter', sans-serif;;
+            font-family: Roboto, sans-serif;;
+            background-color: black;
         }
         .screen_box{
             position: absolute;
@@ -12,19 +13,20 @@
             transform: translate(-50%,-50%);
             width:420px;
             height: auto;
-            background-color:#fff;
+            background-color:#1c1c1c;
             box-shadow: 0px 18px 36px -18px rgba(0, 0, 0, 0.3), 0px 30px 59.9999px -12px rgba(50, 50, 93, 0.25);
-            border-radius: 10px;
+            border-radius: 9px;
         }
         .top_navbar{
-            background-color: #524fa1;
-            color: #fff;
-            padding: 0.75rem 1.25rem;
-            border-radius: 0px;
-            font-size: 14px;
+            background-color: #1c1c1c;
+            color: rgb(255, 255, 255);
+            padding-top:    3rem;
+            border-radius: 9px;
+            font-size: 15px;
+            text-align: center;
         }
         .content_text_box{
-            height: 600px;
+            height: 330px;
             position: relative;
             margin: 0px 2rem;
         }
@@ -38,18 +40,21 @@
         .btn_group{
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 27px;
         }
         .btn_group button{
             outline: none;
-            border-style: none;
+            border-style: solid;
             padding: 1rem;
-            font-size: 16px;
+            font-size: 15px;
             font-weight:bold;
             letter-spacing: 1px;
-            color: #fff;
-            background-color: #524fa1;
-            border-radius: 5px;
+            color: rgb(175, 175, 175);
+            background-color: #1f1f1f;
+            
+            border-radius: 9px;
+            border-width: 1px;
+            border-color: rgba(240, 248, 255, 0.18);
             cursor: pointer;
         }
         .check_box{
@@ -59,13 +64,15 @@
             font-weight: bold;
         }
         .check_box input{
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
+            width: 27px;
+            height: 18px;
+            margin-right: 9px;
             cursor: pointer;
+            
         }
         .check_box label{
             cursor: pointer;
+            color: #eee;
         }
         @media (max-width: 450px) {
             .screen_box{

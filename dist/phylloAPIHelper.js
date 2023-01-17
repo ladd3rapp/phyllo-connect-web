@@ -5,8 +5,8 @@ const PHYLLO_BASE_URL = "https://api.sandbox.getphyllo.com";
 const URL_CREATE_SDK_TOKEN = "/v1/sdk-tokens";
 const URL_CREATE_USER = "/v1/users";
 
-const PHYLLO_CLIENT_ID = "<CLIENT_ID>";
-const PHYLLO_SECRET_ID = "<CLIENT_SECRET>";
+const PHYLLO_CLIENT_ID = "a774cb6d-2362-4f4c-984d-b8c8ea0d3c81";
+const PHYLLO_SECRET_ID = "712a8b0b-3be9-40ed-b876-f00f9e9d5ec6";
 
 // encode client_id:secret to base-64
 const AUTH_KEY = window.btoa(PHYLLO_CLIENT_ID+":"+PHYLLO_SECRET_ID);
