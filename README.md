@@ -1,4 +1,4 @@
-# Phyllo Sample App:
+# LADD3R Beta Connect App:
 
 
 ### Steps to Run:
