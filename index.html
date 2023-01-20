@@ -27,16 +27,33 @@
     <script defer type="text/javascript">
       const phylloSDKConnect = async (workPlatformId = null) => {
         try {
-          const env = "sandbox"; // the mode in which you want to use the SDK,  `sandbox` or `production`
-          const uniqId = new Date().getTime(); // Unique ID for the user supplied by you.
+          const env = "staging"; 
+          
+          const url = window.location.search
+
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+
+                var pid = getParameterByName('pid');
+                var auth = getParameterByName('auth')
+                console.log(dynamicContent,auth)  
+
+          const uniqId = pid; // Unique ID for the user supplied by you.
+          
           const isExistingUser =
             document.getElementById("isExistingUser").checked;
-          const userId = await createUser(
-            "phyllo-user",
+          const userId = pid,
             uniqId,
             isExistingUser
           );
-          const token = await createSDKToken(userId);
+          const token = auth;
           const appName = "LADD3R";
 
           const config = {
