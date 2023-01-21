@@ -30,14 +30,9 @@
           const env = "staging"; // the mode in which you want to use the SDK,  `sandbox` or `production`
           const uniqId = localStorage.getItem("external_id"); // Unique ID for the user supplied by you.
           const username = localStorage.getItem("handle"); // Username from the session
-          const isExistingUser =
-            localStorage.getItem("isExistingUser");
-          const userId = await createUser(
-            username,
-            uniqId,
-            isExistingUser
-          );
-          const token = await createSDKToken(userId);
+          const isExistingUser = localStorage.getItem("isExistingUser");
+          const userId = localStorage.getItem("pid");
+          const token = localStorage.getItem("sdk");
           const appName = "LADD3r";
 
           const config = {
