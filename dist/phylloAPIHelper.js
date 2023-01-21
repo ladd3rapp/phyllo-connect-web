@@ -13,7 +13,6 @@ const external_id = parameters.get('external_id');
 const pid = parameters.get('pid');
 
 localStorage.setItem(external_id, pid, auth, handle); 
-sessionStorage.setItem(localStorage.getItem("auth"));
 console.log(localStorage.getItems("external_id","pid","auth","handle"));
 
 // encode client_id:secret to base-64
