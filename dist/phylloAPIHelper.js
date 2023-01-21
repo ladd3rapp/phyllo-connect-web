@@ -12,12 +12,12 @@ const handle = parameters.get('handle');
 const external_id = parameters.get('id');
 const pid = parameters.get('pid');
 
-function populateStorage() {
+
   localStorage.setItem('auth', auth.toString());
   localStorage.setItem('pid', pid.toString());
   localStorage.setItem('external_id', external_id.toString());
   localStorage.setItem('handle', handle.toString());
-}
+
 
 console.log(localStorage.getItem("auth"));
 console.log(localStorage.getItem("pid"));
