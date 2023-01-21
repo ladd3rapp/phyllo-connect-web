@@ -1,7 +1,7 @@
 
 <html lang="en">
   <head>
-    <title>LADD3R</title>
+    <title>LADD3R CONNECT CENTER</title>
     <link rel="icon" href="/static/Ladder_Wordmark_2.jpg" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,15 +27,17 @@
     <script defer type="text/javascript">
       const phylloSDKConnect = async (workPlatformId = null) => {
         try {
-          const urlParams = new URL(window.location.toLocaleString()).searchParams;
-
-          const env = "sandbox"; // the mode in which you want to use the SDK,  `sandbox` or `production`
-          const uniqId = urlParams.get('id'); // Unique ID for the user supplied by you.
+          const env = "staging"; // the mode in which you want to use the SDK,  `sandbox` or `production`
+          const uniqId = localStorage.getItem("external_id"); // Unique ID for the user supplied by you.
           const isExistingUser =
             document.getElementById("isExistingUser").checked;
-          const userId = urlParams.get('pid');
-          const token = urlParams.get('auth');
-          const appName = "LADD3R";
+          const userId = await createUser(
+            "phyllo-user",
+            uniqId,
+            isExistingUser
+          );
+          const token = await createSDKToken(userId);
+          const appName = "LADD3r";
 
           const config = {
             environment: env,
@@ -52,7 +54,7 @@
             (accountId, workplatformId, userId) => {
               // gives the successfully connected account ID and work platform ID for the given user ID
               console.log(
-                `onAccountConnected: ${accountId}, ${workplatformId}, ${userId}`
+                `onAccountConnected: ${accountId}, ${workplatformId}, ${userId},`
               );
             }
           );
@@ -91,23 +93,23 @@
     </script>
     <div class="screen_box">
       <div class="top_navbar">
-        <h2>LADD3R Connect Center</h2>
+        <h2>LADD3R CONNECT CENTER</h2>
       </div>
       <div class="content_text_box">
         <div class="content_data">
           <div class="btn_group">
             <button onclick="phylloSDKConnect()">
-              Connect Social Account(s)
+              Connect Platform Account(s)
             </button>
             <button
               onclick="phylloSDKConnect('9bb8913b-ddd9-430b-a66a-d74d846e6c66')"
             >
-              Connect Instagram Account Only
+              Connect Instagram using Phyllo
             </button>
             <button
               onclick="phylloSDKConnect('14d9ddf5-51c6-415e-bde6-f8ed36ad7054')"
             >
-              Connect YouTube Only
+              Connect YouTube using Phyllo
             </button>
             <div class="check_box">
               <input type="checkbox" id="isExistingUser" />
