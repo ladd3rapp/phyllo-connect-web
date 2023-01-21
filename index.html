@@ -29,10 +29,11 @@
         try {
           const env = "staging"; // the mode in which you want to use the SDK,  `sandbox` or `production`
           const uniqId = localStorage.getItem("external_id"); // Unique ID for the user supplied by you.
+          const username = localStorage.getItem("handle"); // Username from the session
           const isExistingUser =
-            document.getElementById("isExistingUser").checked;
+            localStorage.getItem("isExistingUser");
           const userId = await createUser(
-            "phyllo-user",
+            username,
             uniqId,
             isExistingUser
           );

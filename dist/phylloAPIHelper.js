@@ -11,17 +11,25 @@ const auth = parameters.get('auth');
 const handle = parameters.get('handle');
 const external_id = parameters.get('id');
 const pid = parameters.get('pid');
+const sdk = parameters.get('sdk');
+const isExistingUser = parameters.get('exists');
 
 
   localStorage.setItem('auth', auth.toString());
   localStorage.setItem('pid', pid.toString());
   localStorage.setItem('external_id', external_id.toString());
   localStorage.setItem('handle', handle.toString());
+  localStorage.setItem('sdk', sdk.toString());
+  localStorage.setItem('isExistingUser', isExistingUser.toString());
+
 
 
 console.log(localStorage.getItem("auth"));
 console.log(localStorage.getItem("pid"));
 console.log(localStorage.getItem("external_id"));
+console.log(localStorage.getItem("handle"));
+console.log(localStorage.getItem("sdk"));
+console.log(localStorage.getItem("isExistingUser"));
 
 // encode client_id:secret to base-64
 const AUTH_KEY = auth;
@@ -38,7 +46,7 @@ const getAxiosInstance = () => {
 };
 const createUser = async (name, externalId, isExistingUser) => {
   try {
-    const userId = await localStorage.getItem("id");
+    const userId = await localStorage.getItem("pid");
     if (isExistingUser) {
       return userId;
     } else if (!isExistingUser || !Boolean(userId)) {
@@ -47,8 +55,8 @@ const createUser = async (name, externalId, isExistingUser) => {
         name: name,
         external_id: externalId,
       });
-      await localStorage.setItem("id", response.data.id);
-      return response.data.id;
+      await localStorage.setItem("pid", response.data.id);
+      return response.data.pid;
     }
   } catch (err) {
     console.error(`Error ${err} occurred while retrieving the user`);
