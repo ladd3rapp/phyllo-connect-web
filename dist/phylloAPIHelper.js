@@ -9,11 +9,19 @@ const url = new URL(window.location.toLocaleString());
 const parameters = new URLSearchParams(url.search);
 const auth = parameters.get('auth');
 const handle = parameters.get('handle');
-const external_id = parameters.get('external_id');
+const external_id = parameters.get('id');
 const pid = parameters.get('pid');
 
-localStorage.setItem(external_id, pid, auth, handle); 
-console.log(localStorage.getItems("external_id","pid","auth","handle"));
+function populateStorage() {
+  localStorage.setItem('auth', auth.toString());
+  localStorage.setItem('pid', pid.toString());
+  localStorage.setItem('external_id', external_id.toString());
+  localStorage.setItem('handle', handle.toString());
+}
+
+console.log(localStorage.getItem("auth"));
+console.log(localStorage.getItem("pid"));
+console.log(localStorage.getItem("external_id"));
 
 // encode client_id:secret to base-64
 const AUTH_KEY = auth;
