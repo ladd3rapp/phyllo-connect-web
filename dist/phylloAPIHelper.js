@@ -23,14 +23,6 @@ const isExistingUser = parameters.get('exists');
   localStorage.setItem('isExistingUser', isExistingUser.toString());
 
 
-
-console.log(localStorage.getItem("auth"));
-console.log(localStorage.getItem("pid"));
-console.log(localStorage.getItem("external_id"));
-console.log(localStorage.getItem("handle"));
-console.log(localStorage.getItem("sdk"));
-console.log(localStorage.getItem("isExistingUser"));
-
 // encode client_id:secret to base-64
 const AUTH_KEY = auth;
 
@@ -42,7 +34,6 @@ const getAxiosInstance = () => {
     },
   });
   return api;
-  console.log(api);
 };
 const createUser = async (name, externalId, isExistingUser) => {
   try {
