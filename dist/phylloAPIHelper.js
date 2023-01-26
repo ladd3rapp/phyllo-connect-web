@@ -1,9 +1,4 @@
 
-// Base url For staging  
-const XANO_BASE_URL = "https://x8ki-letl-twmt.n7.xano.io/api:1zR1S5hR";
-
-// const URL_CREATE_SDK_TOKEN = "/v1/sdk-tokens";
-const URL_GET_ME = "/auth/me";
 
 const url = new URL(window.location.toLocaleString());
 const parameters = new URLSearchParams(url.search);
