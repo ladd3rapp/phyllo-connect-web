@@ -13,6 +13,8 @@ const external_id = parameters.get('id');
 const pid = parameters.get('pid');
 const sdk = parameters.get('sdk');
 const isExistingUser = parameters.get('exists');
+const workpid = parameters.get('workpid');
+const platform = parameters.get('platform');
 
 
   localStorage.setItem('auth', auth.toString());
@@ -21,5 +23,9 @@ const isExistingUser = parameters.get('exists');
   localStorage.setItem('handle', handle.toString());
   localStorage.setItem('sdk', sdk.toString());
   localStorage.setItem('isExistingUser', isExistingUser.toString());
+  localStorage.setItem('workpid', workpid.toString());
+  localStorage.setItem('platform', platform.toString());
+  
+
 
 

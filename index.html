@@ -34,13 +34,14 @@
           const userId = localStorage.getItem("pid");
           const token = localStorage.getItem("sdk");
           const appName = "LADD3r";
+          const workPlatformId = localStorage.getItem("workPlatformId");
 
           const config = {
             environment: env,
             userId: userId,
             token: token,
             clientDisplayName: appName,
-            workPlatformId:workPlatformId
+            workPlatformId: workPlatformId
           };
           const phylloConnect = window.PhylloConnect.initialize(config);
 
@@ -94,13 +95,9 @@
       <div class="content_text_box">
         <div class="content_data">
           <div class="btn_group">
-            <button onclick="phylloSDKConnect('9bb8913b-ddd9-430b-a66a-d74d846e6c66')">
-              Connect Instagram
-            </button>
-            <button onclick="phylloSDKConnect('14d9ddf5-51c6-415e-bde6-f8ed36ad7054')">
-              Connect YouTube
-            </button>
-            
+            <button onclick="phylloSDKConnect()">
+              Connect using Phyllo
+            </button>         
           </div>
         </div>
       </div>
