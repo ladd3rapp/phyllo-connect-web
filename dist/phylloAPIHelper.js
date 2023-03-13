@@ -11,7 +11,6 @@ const workpid = parameters.get('workpid');
 const platform = parameters.get('platform');
 
 
-  localStorage.setItem('auth', auth.toString());
   localStorage.setItem('pid', pid.toString());
   localStorage.setItem('external_id', external_id.toString());
   localStorage.setItem('handle', handle.toString());
