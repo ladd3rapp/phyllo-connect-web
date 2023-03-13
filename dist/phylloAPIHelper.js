@@ -2,7 +2,6 @@
 
 const url = new URL(window.location.toLocaleString());
 const parameters = new URLSearchParams(url.search);
-const auth = parameters.get('auth');
 const handle = parameters.get('handle');
 const external_id = parameters.get('id');
 const pid = parameters.get('pid');
