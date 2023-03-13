@@ -37,10 +37,11 @@
           const workPlatformId = localStorage.getItem("workPlatformId");
 
           const config = {
+            clientDisplayName: appName,
             environment: env,
             userId: userId,
             token: token,
-            clientDisplayName: appName,
+            redirect: false,
             workPlatformId: workPlatformId
           };
           const phylloConnect = window.PhylloConnect.initialize(config);
