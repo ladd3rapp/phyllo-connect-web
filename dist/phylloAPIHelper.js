@@ -10,7 +10,6 @@ const sdk = parameters.get('sdk');
   localStorage.setItem('pid', pid.toString());
   localStorage.setItem('external_id', external_id.toString());
   localStorage.setItem('sdk', sdk.toString());
-  localStorage.setItem('isExistingUser', isExistingUser.toString());
 
 
 
