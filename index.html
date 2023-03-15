@@ -48,19 +48,19 @@
           // callbacks
           phylloConnect.on(
             "accountConnected",
-            (accountId, workplatformId, userId) => {
+            (accountId, profileId, workplatformId, userId) => {
               // gives the successfully connected account ID and work platform ID for the given user ID
               console.log(
-                `onAccountConnected: ${accountId}, ${workplatformId}, ${userId},`
+                `onAccountConnected: ${accountId}, ${profileId}, ${workplatformId}, ${userId},`
               );
             }
           );
           phylloConnect.on(
             "accountDisconnected",
-            (accountId, workplatformId, userId) => {
+            (accountId, profileId, workplatformId, userId) => {
               // gives the successfully disconnected account ID and work platform ID for the given user ID
               console.log(
-                `onAccountDisconnected: ${accountId}, ${workplatformId}, ${userId}`
+                `onAccountDisconnected: ${accountId}, ${profileId}, ${workplatformId}, ${userId}`
               );
             }
           );
